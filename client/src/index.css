@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Lato:wght@300;400;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Design Philosophy: Academic Elegance - Professional, Clean, Scholarly */
+  /* Light-first aesthetic with academic blue and gold accents */
+  --primary: #003D82; /* Academic Blue */
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #003D82;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #0052A3;
+  --chart-2: #003D82;
+  --chart-3: #002D5F;
+  --chart-4: #001D3D;
+  --chart-5: #000D1A;
+  --radius: 0.5rem;
+  --background: #FFFFFF; /* Clean White */
+  --foreground: #1A1A1A; /* Deep Charcoal */
+  --card: #F8F9FA; /* Soft Off-white */
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --secondary: #4A5568; /* Slate Gray */
+  --secondary-foreground: #FFFFFF;
+  --muted: #E2E8F0; /* Light Gray */
+  --muted-foreground: #4A5568;
+  --accent: #B8860B; /* Gold/Bronze */
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626; /* Red */
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input: #F8F9FA;
+  --ring: #003D82;
+  --sidebar: #F8F9FA;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-accent: #E2E8F0;
+  --sidebar-accent-foreground: #003D82;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #003D82;
+}
+
+/* Light mode is the default - no dark mode for academic design */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Academic Design - Serif Headings */
+  .font-serif {
+    font-family: 'Crimson Text', serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Subtle Academic Styling */
+  .academic-section {
+    border-top: 1px solid var(--border);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .academic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .academic-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 61, 130, 0.08);
+  }
+
+  /* Academic Button Styling */
+  .academic-button {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+  }
+
+  .academic-button:hover {
+    background: #002D5F;
+    border-color: #002D5F;
+  }
+
+  .academic-button-outline {
+    background: transparent;
+    color: var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+  }
+
+  .academic-button-outline:hover {
+    background: var(--card);
+  }
+}
