@@ -167,10 +167,26 @@ export default function Home() {
                 A backend-focused software engineer passionate about building scalable systems with Java, Spring Boot, and PostgreSQL. Currently preparing for an MSc in Computer Science while working at OROCUBE TECH.
               </p>
 
-              <div className="flex gap-4">
-                <button className="academic-button">Get in Touch</button>
-                <button className="academic-button-outline">View GitHub</button>
-              </div>
+   <div className="flex gap-4">
+  {/* Scroll to Contact Section */}
+  <a
+    href="#contact"
+    className="academic-button"
+  >
+    Get in Touch
+  </a>
+
+  {/* Open GitHub in New Tab */}
+  <a
+    href="https://github.com/mdyousufh/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="academic-button-outline"
+  >
+    View GitHub
+  </a>
+</div>
+
 
               <div className="flex gap-4 pt-4">
                 <a
