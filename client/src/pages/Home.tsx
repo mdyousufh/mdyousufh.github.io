@@ -164,7 +164,7 @@ export default function Home() {
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A backend-focused software engineer passionate about building scalable systems with Java, Spring Boot, and PostgreSQL. Currently preparing for an MSc in Computer Science while working at OROCUBE TECH.
+                A backend-focused software engineer passionate about building scalable systems with Java, Spring Boot, and PostgreSQL. Currently working at OROCUBE TECH while preparing for graduate studies.
               </p>
 
    <div className="flex gap-4">
